@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: 'Overpass', sans-serif;
+    color: var(--color-white);
+}
+
+:root {
+    /* Primary Colors */
+    --color-light-red: hsl(356, 100%, 66%);
+    --color-very-light-red: hsl(355, 100%, 74%);
+    --color-very-dark-blue: hsl(208, 49%, 24%);
+  
+    /* Neutral Colors */
+    --color-white: hsl(0, 0%, 100%);
+    --color-grayish-blue: hsl(240, 2%, 79%);
+    --color-very-dark-grayish-blue: hsl(207, 13%, 34%);
+    --color-very-dark-black-blue: hsl(240, 10%, 16%);
+  
+    /* Gradient Colors */
+    --gradient-cta-start: hsl(13, 100%, 72%);
+    --gradient-cta-end: hsl(353, 100%, 62%);
+    --gradient-body-start: hsl(237, 17%, 21%);
+    --gradient-body-end: hsl(237, 23%, 32%);
+}
+  
+
+.hero {
+    min-height: 70dvh;
+    background-image: url('./images/bg-pattern-intro-mobile.svg'), linear-gradient(var(--gradient-cta-start), var(--gradient-cta-end));
+    background-position: right 65% top 45%;
+    background-repeat: no-repeat; /* Ensures the image does not repeat */
+    background-size: 350%; /* Adjusts the size of the background image and gradient */
+    /* background-blend-mode: overlay; */
+    border-bottom-left-radius: 25%;
+}
+
+.hero__wrapper {
+    width: 90%;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem .5rem;
+    position: relative;
+}
+
+.nav__dropdown--hamburger {
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+    background-image: url('./images/icon-close.svg');
+    background-repeat: no-repeat;
+    background-size: fill;
+    background-position: center;
+}
+
+.nav__dropdown--hamburger.closed {
+    background-image: url('./images/icon-hamburger.svg');
+}
+
+.nav__dropdown__menu.closed {
+    display: none;
+}
+
+.nav__dropdown__menu {
+    position: absolute;
+    width: 90%;
+    margin-inline: auto;
+    top: 90%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-grayish-blue);
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: var(--color-white);
+    color: var(--color-very-dark-blue);
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu {
+    text-align: center;
+    /* padding: 1rem; */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-menu > li {
+    width: 100%;
+    margin-bottom: .5rem;
+    text-align: center;
+}
+
+.nav-menu > li:last-child {
+    margin-bottom: 0;
+}
+
+.nav-menu > li:last-child > .inner-menu {
+    margin-bottom: 0;
+}
+
+.nav-menu > li.open > .menu__item__dropdown > img {
+    transform: rotate(180deg);
+}
+
+.inner-menu {
+    display: grid;
+    gap: .7rem;
+    background-color: var(--color-grayish-blue);
+    margin-block: 1rem;
+    transition: height 2s ease-in-out;
+    padding: 1rem;
+    border-radius: 5px;
+    max-height: fit-content;
+    transition: height 2s ease-in-out;
+}
+
+.inner-menu.closed {
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__dropdown__user__menu {
+    border-top: 1px solid var(--color-grayish-blue);
+    padding: 1rem 0;
+    display: flex;
+    flex:0;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+}
+
+.btn {
+    padding: 1rem 2.5rem;
+    border-radius: 2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-image 0.3s ease-in-out;
+}
+
+.cta-btn {
+    background-image: linear-gradient(to right, var(--gradient-cta-start), var(--gradient-cta-end));
+    color: var(--color-white);
+
+}
+
+.light-cta-btn {
+    background-color: var(--color-white);
+    color: var(--color-light-red);
+    padding: 1rem;
+}
+
+.border-cta-btn {
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+    padding: 1rem;
+}
+
+.hero__content {
+   display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero__content > h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.hero__content > h2 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.hero__cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
