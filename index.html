@@ -8,6 +8,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./mq.css">
   <title>Frontend Mentor | [Blogr]</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -80,12 +81,58 @@
             </div>
           </div>
         </div>
+        <div class="nav__extended">
+          <ul class="nav-menu">
+            <li class="menu__item">
+              <div class="menu__item__dropdown">
+                <span>Product</span>
+                <img src="./images/icon-arrow-light.svg" alt="" srcset="">
+              </div>
+              <ul class="inner-menu closed">
+                <li class="inner-menu__item"><a href="">Overview</a></li>
+                <li class="inner-menu__item"><a href="">Pricing</a></li>
+                <li class="inner-menu__item"><a href="">Marketplace</a></li>
+                <li class="inner-menu__item"><a href="">Features</a></li>
+                <li class="inner-menu__item"><a href="">Integrations</a></li>
+              </ul>
+            </li>
+            <li class="menu__item">
+              <div class="menu__item__dropdown closed">
+                <span>Company</span>
+                <img src="./images/icon-arrow-light.svg" alt="" srcset="">
+              </div>
+              <ul class="inner-menu closed">
+                <li class="inner-menu__item"><a href="">About</a></li>
+                <li class="inner-menu__item"><a href="">Team</a></li>
+                <li class="inner-menu__item"><a href="">Blog</a></li>
+                <li class="inner-menu__item"><a href="">Careers</a></li>
+              </ul>
+            </li>
+            <li class="menu__item">
+              <div class="menu__item__dropdown closed">
+                <span>Connect</span>
+                <img src="./images/icon-arrow-light.svg" alt="" srcset="">
+              </div>
+              <ul class="inner-menu closed">
+                <li class="inner-menu__item"><a href="">Contact</a></li>
+                <li class="inner-menu__item"><a href="">Newsletter</a></li>
+                <li class="inner-menu__item"><a href="">LinkedIn</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="nav__dropdown__user__menu">
+            <a href="">Login</a>
+            <div class="user__menu__singin__wrapper">
+              <a href="" class="reverse-cta-btn btn">Sign Up</a>
+            </div>
+          </div>
+        </div>
       </nav>
       <div class="hero__content">
         <h1>A modern publishing platform</h1>
         <h2>Grow your audience and build your online brand</h2>
         <div class="hero__cta">
-          <a href="" class="light-cta-btn btn">Start for Free</a>
+          <a href="" class="reverse-cta-btn btn">Start for Free</a>
           <a href="" class="border-cta-btn btn">Learn More</a>
         </div>
       </div>
@@ -96,8 +143,6 @@
       <h3 class="section__title">Designed for the future</h3>
       <div class="section__wrapper">
         <div class="introduction__img">
-          <!-- TODO mudar para bg img -->
-          <img src="./images/illustration-editor-mobile.svg" alt="">
         </div>
         <article class="introduction__article">
           <h3 class="article__title">Introducing an extensible editor</h3>
@@ -119,35 +164,45 @@
     </section>
     <section class="infrastructure">
       <div class="section__wrapper">
-        <article class="infraestructure__article dark-bg special-border">
-          <h3 class="article__title">State of the Art Infrastructure</h3>
-          <p>
-            With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity.
-            This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
-          </p>
+        <article class="infraestructure__article dark-bg special-border" id="anoying-wrapper">
+          <div class="article__wrapper">
+            <h3 class="article__title">State of the Art Infrastructure</h3>
+            <p>
+              With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast
+              connectivity.
+              This ensures your site will load instantly, no matter where your readers are, keeping your site
+              competitive.
+            </p>
+          </div>
         </article>
-        <div class="infraestructure__img left-img">
-          <!-- TODO change to bg img -->
-          <img src="./images/illustration-laptop-mobile.svg" alt="">
+        <div class="infraestructure__container">
+          <div class="infraestructure__img left-img">
+            <h1></h1>
+          </div>
+          <div class="infraestructure__inner__articles">
+            <article class="infraestructure__article">
+              <h3 class="article__title">Free, open, simple</h3>
+              <p>
+                Blogr is a free and open source application backed by a large community of helpful developers. It
+                supports
+                features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting
+                tools,
+                and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.
+              </p>
+            </article>
+            <article class="infraestructure__article">
+              <h3 class="article__title">Powerful tooling</h3>
+              <p>
+                Batteries included. We built a simple and straightforward CLI tool that makes customization and
+                deployment
+                a
+                breeze,
+                but
+                capable of producing even the most complicated sites.
+              </p>
+            </article>
+          </div>
         </div>
-        <article class="infraestructure__article">
-          <h3 class="article__title">Free, open, simple</h3>
-          <p>
-            Blogr is a free and open source application backed by a large community of helpful developers. It supports
-            features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting
-            tools,
-            and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.
-          </p>
-        </article>
-        <article class="infraestructure__article">
-          <h3 class="article__title">Powerful tooling</h3>
-          <p>
-            Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a
-            breeze,
-            but
-            capable of producing even the most complicated sites.
-          </p>
-        </article>
       </div>
     </section>
   </main>
@@ -185,7 +240,7 @@
   </footer>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://github.com/FerrMath">Matheus A.</a>.
   </div>
   <script src="./app.js"></script>
 </body>

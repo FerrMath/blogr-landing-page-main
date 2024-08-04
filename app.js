@@ -1,8 +1,12 @@
 let burguer = document.querySelector('.nav__dropdown--hamburger')
 let dropdown = document.querySelector('.nav__dropdown__menu')
 let menuItems = document.querySelectorAll('.nav-menu > li.menu__item')
+let wrappers = document.querySelectorAll('.wrapper-90')
 
-console.log(menuItems)
+
+if (window.innerWidth > 800) {
+    removeWrappers()
+}
 
 burguer.addEventListener('click', () => {
     burguer.classList.toggle('closed')
@@ -20,6 +24,26 @@ menuItems.forEach( mi => {
         })
     }
 )
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 800) {
+        removeWrappers()
+    } else {
+        addWrappers()
+    }
+})
+
+function removeWrappers() {
+    wrappers.forEach( w => {
+        w.classList.remove('wrapper-90')
+    })
+}
+
+function addWrappers() {
+    wrappers.forEach( w => {
+        w.classList.add('wrapper-90')
+    })
+}
 
 function toggleInnerMenu(menuItem) {
     let im = menuItem.querySelector('.inner-menu')
